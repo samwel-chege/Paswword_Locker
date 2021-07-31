@@ -10,6 +10,12 @@ def create_account(fname,lname,sitename,passcode):
 
 def save_account(account):
     '''
-    Fuunction to save accounts
+    Function to save accounts
     ''' 
-    account.save_account()   
+    account.save_account() 
+
+def del_account(account):
+    '''
+    Function to delete an account
+    ''' 
+    account.delete_account()      
