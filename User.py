@@ -13,4 +13,10 @@ class User:
         '''
         save_account method saves objects into user_list
         ''' 
-        User.user_list.append(self)   
+        User.user_list.append(self) 
+
+    def delete_account(self):
+        '''
+        delete_account method deletes a saved account from the user_list
+        '''  
+        User.user_list.remove(self)    
