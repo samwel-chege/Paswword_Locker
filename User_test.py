@@ -58,7 +58,19 @@ class TestUser(unittest.TestCase):
         test_account.save_account()
 
         self.new_account.delete_account()
-        self.assertEqual(len(User.user_list),1) 
+        self.assertEqual(len(User.user_list),1)
+
+    def test_account_exists(self):
+        '''
+        test to check if we can return a Boolean if we cannot find the account
+        ''' 
+        self.new_account.save_account()
+        test_account = User("Test", "user", "Twitter", "3421")
+        test_account.save_account()
+
+        account_exists = User.account_exist("Twitter")  
+
+        self.assertTrue(account_exists)  
 
     def test_find_account_by_sitename(self):
         '''
@@ -71,6 +83,13 @@ class TestUser(unittest.TestCase):
         found_account = User.find_by_sitename("Twitter")  
 
         self.assertEqual(found_account.passcode,test_account.passcode)
+
+    def test_display_all_accounts(self):
+        '''
+        method that returns a list of all conyacts saved
+        '''  
+
+        self.assertEqual(User.display_account(),User.user_list)  
 
 
 if __name__ == '__main__':
