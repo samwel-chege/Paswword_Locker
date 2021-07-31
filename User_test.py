@@ -30,7 +30,14 @@ class TestUser(unittest.TestCase):
         test_save_account test case to test if the user object is saved into the user list
         ''' 
         self.new_account.save_account()
-        self.assertEqual(len(User.user_list),1)   
+        self.assertEqual(len(User.user_list),1)  
+
+    def test_save_multiple_account(self):
+        '''
+        test save_multiple_accounts to check if we can save multiple account objects to our user_list
+
+        '''
+
 
 
 if __name__ == '__main__':
