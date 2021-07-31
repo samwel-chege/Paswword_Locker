@@ -16,6 +16,13 @@ class TestUser(unittest.TestCase):
         '''
         self.new_account = User("Sammie", "Sam", "3421")
 
+    def tearDown(self):
+        '''
+        tearDown  method that does clean up after each test case has run 
+        '''
+        User.user_list = []
+        
+
     def test_init(self):
         '''
         test_init case to test if the object id initialized properly 
@@ -35,8 +42,11 @@ class TestUser(unittest.TestCase):
     def test_save_multiple_account(self):
         '''
         test save_multiple_accounts to check if we can save multiple account objects to our user_list
-
         '''
+        self.new_account.save_account()
+        test_account = User("Test","user", "3421")
+        test_account.save_account()
+        self.assertEqual(len(User.user_list),2)
 
 
 
