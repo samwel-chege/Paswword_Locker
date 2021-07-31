@@ -36,3 +36,29 @@ class User:
         for account in cls.user_list:
             if account.sitename == sitename:
                 return account
+
+    @classmethod
+    def account_exist(cls,sitename):
+        '''
+        Method that checks if an account exists from the user_list
+        Args:
+             sitename:sitename to serach if it exists
+        Returns:
+             Boolean : True or false depending if the account exists       
+        '''
+        for account in cls.user_list == sitename:
+            if account.sitename == sitename:
+                return True
+
+        return False
+
+    @classmethod
+    def display_account(cls):
+        '''
+        method that returns the user list
+        ''' 
+        return cls.user_list           
+
+        
+        
+                     
